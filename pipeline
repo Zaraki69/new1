@@ -9,7 +9,7 @@ pipeline {
     stage('Deploy') {
       steps {
         // Example command: copy index.html to your web-server (adjust for your setup)
-        sh 'scp -i /path/to/key.pem index.html ubuntu@YOUR_EC2_IP:/var/www/html/index.html'
+        sh 'scp -i /home/ubuntu/new1/Host1.pem index.html ubuntu@13.232.203.197:/var/www/html/index.html'
       }
     }
   }
