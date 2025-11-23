@@ -1,0 +1,5 @@
+[UBU1]
+172.31.8.58
+[LIN1]
+172.31.10.87 ansible_user=ec2-user
+

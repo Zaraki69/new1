@@ -1,0 +1,30 @@
+---
+- name: Install and start nginx
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install nginx on Ubuntu hosts
+      apt:
+        name: nginx
+        state: present
+      when: "'UBU1' in group_names"
+
+    - name: Start nginx on Ubuntu hosts
+      service:
+        name: nginx
+        state: started
+      when: "'UBU1' in group_names"
+
+    - name: Install nginx on Amazon Linux (LIN1) hosts
+      yum:
+        name: nginx
+        state: present
+      when: "'LIN1' in group_names"
+
+    - name: Start nginx on Amazon Linux (LIN1) hosts
+      service:
+        name: nginx
+        state: started
+      when: "'LIN1' in group_names"
+

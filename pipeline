@@ -1,0 +1,17 @@
+pipeline {
+  agent any
+  stages {
+    stage('Checkout') {
+      steps {
+        git url: 'https://github.com/your-user/hello-ci-cd.git', branch: 'main'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        // Example command: copy index.html to your web-server (adjust for your setup)
+        sh 'scp -i /path/to/key.pem index.html ubuntu@YOUR_EC2_IP:/var/www/html/index.html'
+      }
+    }
+  }
+}
+
